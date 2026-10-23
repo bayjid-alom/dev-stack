@@ -1,6 +1,7 @@
 import { ToastContainer } from 'react-toastify'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
+import Banner from './components/Banner.jsx/Banner'
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
 
       <Navbar></Navbar>
 
+      <Banner></Banner>
 
 
       <ToastContainer></ToastContainer>
