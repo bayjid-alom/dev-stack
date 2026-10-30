@@ -53,7 +53,7 @@ const TechCard = ({ stack, handleAddToStack, isAdded }) => {
             {/* Add to Stack Button */}
             <button
                 onClick={() => handleAddToStack(stack)}
-                className={`mt-5 flex w-full items-center justify-center gap-1.5 rounded-md py-2 text-[11px] font-medium text-white transition-colors duration-300 ${isAdded ? 'bg-green-600' : 'bg-slate-950 hover:bg-pink-600'
+                className={`mt-5 flex w-full items-center justify-center gap-1.5 rounded-md py-2.5 text-[11px] font-medium text-white transition-colors duration-300 ${isAdded ? 'bg-green-600' : 'bg-slate-950 hover:bg-pink-600'
                     }`}
             >
                 {isAdded ? (
