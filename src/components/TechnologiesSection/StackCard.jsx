@@ -1,7 +1,17 @@
 import { X } from 'lucide-react';
 import React from 'react';
+import { toast } from 'react-toastify';
 
-const StackCard = ({ singleStack, isInStack }) => {
+const StackCard = ({ singleStack, isInStack, setIsInStack }) => {
+
+    const handleStackCard = (singleStack) => {
+        const filterdArray = isInStack.filter(c => c.id !== singleStack.id);
+        setIsInStack(filterdArray);
+        toast.success(`${singleStack.title} removed from your stack!`);
+    }
+
+
+
     return (
         <div
             key={singleStack.id}
@@ -27,7 +37,9 @@ const StackCard = ({ singleStack, isInStack }) => {
 
 
             {/* Remove Icon */}
-            <button className="shrink-0 text-slate-400 transition-colors hover:text-red-500">
+            <button
+                onClick={() => handleStackCard(singleStack)}
+                className="shrink-0 text-slate-400 transition-colors hover:text-red-500">
                 <X size={20} strokeWidth={1.8} />
             </button>
 

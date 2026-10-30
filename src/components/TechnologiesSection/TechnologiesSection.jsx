@@ -5,10 +5,11 @@ import StackCard from './StackCard';
 import { toast } from 'react-toastify';
 
 const TechnologiesSection = ({ stacksPromise }) => {
-    const stacks = use(stacksPromise);
 
+    const stacks = use(stacksPromise);
     const [isAdded, setIsAdded] = useState(false);
     const [isInStack, setIsInStack] = useState([]);
+
 
 
     const handleAddToStack = (stack) => {
@@ -21,9 +22,16 @@ const TechnologiesSection = ({ stacksPromise }) => {
 
         setIsAdded(true);
         setIsInStack([...isInStack, stack]);
-
         toast.success(`${stack.title} added to your stack!`);
     };
+
+
+
+    const handleRemoveAll = () => {
+        setIsInStack([]);
+        toast.success("All technologies removed from your stack!");
+    };
+
 
 
     return (
@@ -112,7 +120,8 @@ const TechnologiesSection = ({ stacksPromise }) => {
                             isInStack.map(singleStack => <StackCard
                                 key={singleStack.id}
                                 singleStack={singleStack}
-                                isInStack={isInStack}></StackCard>)
+                                isInStack={isInStack}
+                                setIsInStack={setIsInStack}></StackCard>)
                         }
                     </div>
 
@@ -121,6 +130,7 @@ const TechnologiesSection = ({ stacksPromise }) => {
                     {/* Conditional */}
                     {isInStack.length > 0 && (
                         <button
+                            onClick={handleRemoveAll}
                             type="button"
                             className="btn mt-5 text-xs w-full rounded-md border border-red-400 bg-white text-base font-semibold text-red-500 shadow-none transition-all duration-200 hover:border-red-500 hover:bg-red-500 hover:text-white"
                         >

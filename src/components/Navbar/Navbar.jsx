@@ -1,4 +1,3 @@
-
 import { Menu } from "lucide-react";
 import navLogo from "../../assets/logo-text.png";
 
@@ -47,8 +46,8 @@ const Navbar = () => {
                             {label}
                             <span
                                 className={`absolute bottom-0 left-0 h-[2px] w-full origin-left rounded-full bg-pink-500 transition-transform duration-300 ease-out ${label === "Home"
-                                        ? "scale-x-100"
-                                        : "scale-x-0 group-hover:scale-x-100"
+                                    ? "scale-x-100"
+                                    : "scale-x-0 group-hover:scale-x-100"
                                     }`}
                             />
                         </a>
