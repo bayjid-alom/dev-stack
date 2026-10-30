@@ -1,20 +1,30 @@
-
 import React, { use, useState } from 'react';
 import TechCard from './TechCard';
 import { X } from 'lucide-react';
 import StackCard from './StackCard';
+import { toast } from 'react-toastify';
 
 const TechnologiesSection = ({ stacksPromise }) => {
     const stacks = use(stacksPromise);
 
-    const [isInStack, setIsInStack] = useState([])
+    const [isAdded, setIsAdded] = useState(false);
+    const [isInStack, setIsInStack] = useState([]);
 
 
     const handleAddToStack = (stack) => {
-        setIsInStack([...isInStack, stack])
-    }
+        const existingStack = isInStack.find(item => item.id === stack.id);
 
-    // console.log(isInStack);
+        if (existingStack) {
+            toast.info(`${stack.title} is already in your stack!`);
+            return;
+        }
+
+        setIsAdded(true);
+        setIsInStack([...isInStack, stack]);
+
+        toast.success(`${stack.title} added to your stack!`);
+    };
+
 
     return (
 
@@ -53,7 +63,9 @@ const TechnologiesSection = ({ stacksPromise }) => {
                         stacks.map(stack => <TechCard
                             key={stack.id}
                             stack={stack}
-                            handleAddToStack={handleAddToStack}></TechCard>)
+                            handleAddToStack={handleAddToStack}
+                            isAdded={isInStack.find(item => item.id === stack.id)}
+                        ></TechCard>)
                     }
 
                 </div>

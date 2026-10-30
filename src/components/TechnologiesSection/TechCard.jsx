@@ -1,6 +1,7 @@
+import { Check } from 'lucide-react';
 import React from 'react';
 
-const TechCard = ({ stack, handleAddToStack }) => {
+const TechCard = ({ stack, handleAddToStack, isAdded }) => {
 
     return (
 
@@ -46,12 +47,26 @@ const TechCard = ({ stack, handleAddToStack }) => {
                 </span>
             </div>
 
+
+
+
             {/* Add to Stack Button */}
             <button
                 onClick={() => handleAddToStack(stack)}
-                className="mt-5 w-full rounded-md bg-slate-950 py-2 text-[11px] font-medium text-white transition-colors duration-300 hover:bg-pink-600">
-                Add to Stack
+                className={`mt-5 flex w-full items-center justify-center gap-1.5 rounded-md py-2 text-[11px] font-medium text-white transition-colors duration-300 ${isAdded ? 'bg-green-600' : 'bg-slate-950 hover:bg-pink-600'
+                    }`}
+            >
+                {isAdded ? (
+                    <>
+                        <Check size={14} />
+                        Added to Stack
+                    </>
+                ) : (
+                    'Add to Stack'
+                )}
             </button>
+
+
         </div>
     );
 };
