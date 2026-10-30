@@ -1,8 +1,6 @@
 import React from 'react';
 
-const TechCard = ({ stack }) => {
-
-
+const TechCard = ({ stack, handleAddToStack }) => {
 
     return (
 
@@ -49,7 +47,9 @@ const TechCard = ({ stack }) => {
             </div>
 
             {/* Add to Stack Button */}
-            <button className="mt-5 w-full rounded-md bg-slate-950 py-2 text-[11px] font-medium text-white transition-colors duration-300 hover:bg-pink-600">
+            <button
+                onClick={() => handleAddToStack(stack)}
+                className="mt-5 w-full rounded-md bg-slate-950 py-2 text-[11px] font-medium text-white transition-colors duration-300 hover:bg-pink-600">
                 Add to Stack
             </button>
         </div>
