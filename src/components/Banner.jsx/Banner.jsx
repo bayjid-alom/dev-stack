@@ -1,9 +1,10 @@
-
 import { ArrowRight, BookOpen } from "lucide-react";
 import bannerImage from "../../assets/banner-stack.png";
 
 const Banner = () => {
+
   return (
+
     <section id="home" className="overflow-hidden bg-white">
       <div className="mx-auto grid w-[92%] max-w-[1408px] items-center gap-8 py-8 sm:py-16 md:w-[90%] md:grid-cols-[1.1fr_0.9fr] md:gap-4 md:py-20 lg:w-[88%] lg:gap-8 lg:py-18">
 

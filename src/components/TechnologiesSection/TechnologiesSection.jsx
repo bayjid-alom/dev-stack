@@ -38,13 +38,13 @@ const TechnologiesSection = ({ stacksPromise }) => {
 
         <section
             id="technologies"
-            className="technologies mx-auto mb-18 w-[92%] md:mb-23 md:w-[90%] lg:mb-30 lg:w-[88%]"
+            className="technologies mx-auto mb-15 w-[92%] md:mb-23 md:w-[90%] lg:mb-30 lg:w-[88%]"
         >
 
 
             {/* Section Heading */}
-            <div className="heading mb-8">
-                <h2 className="text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl">
+            <div className="heading mb-10">
+                <h2 className="text-2xl font-extrabold md:text-4xl tracking-tight text-slate-900 sm:text-3xl">
                     Explore the{" "}
                     <span className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent">
                         Technologies
